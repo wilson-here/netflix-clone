@@ -9,7 +9,7 @@ export default async function handler(
 ) {
   if (req.method !== "GET") return res.status(405).end();
   try {
-    await serverAuth(req);
+    await serverAuth(req, res);
     const movieCount = await prismadb.movie.count();
     const randomIndex = Math.floor(Math.random() * movieCount);
     const randomMovies = await prismadb.movie.findMany({

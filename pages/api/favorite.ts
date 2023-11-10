@@ -1,3 +1,5 @@
+// add or delete the movie from my favorites
+
 import { useCurrentUser } from "@/hooks/useCurrentUser";
 import { NextApiRequest, NextApiResponse } from "next";
 import { without } from "lodash";
@@ -11,7 +13,7 @@ export default async function handler(
 ) {
   try {
     if (req.method === "POST") {
-      const { currentUser } = await serverAuth(req);
+      const { currentUser } = await serverAuth(req, res);
       const { movieId } = req.body;
       const existingMovie = await prismadb.movie.findUnique({
         where: {
@@ -36,7 +38,7 @@ export default async function handler(
       return res.status(200).json(updatedUser);
     }
     if (req.method === "DELETE") {
-      const { currentUser } = await serverAuth(req);
+      const { currentUser } = await serverAuth(req, res);
       const { movieId } = req.body;
       const existingMovie = await prismadb.movie.findUnique({
         where: {
@@ -44,12 +46,12 @@ export default async function handler(
         },
       });
       if (!existingMovie) {
-        throw new Error("Invalid movie");
+        throw new Error("Invalid ID");
       }
       const updatedFavoriteIds = without(currentUser.favoriteIds, movieId);
       const updatedUser = await prismadb.user.update({
         where: {
-          id: currentUser.id || "",
+          email: currentUser.email || "",
         },
         data: {
           favoriteIds: updatedFavoriteIds,
@@ -60,6 +62,6 @@ export default async function handler(
     return res.status(405).end();
   } catch (err) {
     console.log(err);
-    return res.status(400).end();
+    return res.status(500).end();
   }
 }

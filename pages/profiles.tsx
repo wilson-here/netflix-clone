@@ -7,7 +7,6 @@ export async function getServerSideProps(context: NextPageContext) {
   // getServerSideProps để fetch data trước khi render html
   // getServerSideProps là 1 phần của nextjs sẽ được tự động gọi trước khi component được render
   const session = await getSession(context);
-  console.log("session", session);
   if (!session) {
     return {
       redirect: {

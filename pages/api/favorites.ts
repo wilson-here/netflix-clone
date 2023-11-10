@@ -1,3 +1,5 @@
+// get all movies from my favorites
+
 import { useCurrentUser } from "@/hooks/useCurrentUser";
 import { NextApiRequest, NextApiResponse } from "next";
 import prismadb from "@/libs/prismadb";
@@ -10,7 +12,7 @@ export default async function handler(
   if (req.method !== "GET") return res.status(405).end();
 
   try {
-    const { currentUser } = await serverAuth(req);
+    const { currentUser } = await serverAuth(req, res);
     const favoriteMovies = await prismadb.movie.findMany({
       where: {
         id: {
