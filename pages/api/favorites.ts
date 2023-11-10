@@ -1,6 +1,5 @@
 // get all movies from my favorites
 
-import { useCurrentUser } from "@/hooks/useCurrentUser";
 import { NextApiRequest, NextApiResponse } from "next";
 import prismadb from "@/libs/prismadb";
 import serverAuth from "@/libs/serverAuth";

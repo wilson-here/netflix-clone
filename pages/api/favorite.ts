@@ -1,6 +1,5 @@
 // add or delete the movie from my favorites
 
-import { useCurrentUser } from "@/hooks/useCurrentUser";
 import { NextApiRequest, NextApiResponse } from "next";
 import { without } from "lodash";
 import prismadb from "@/libs/prismadb";
