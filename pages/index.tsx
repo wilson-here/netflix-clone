@@ -6,8 +6,9 @@ import useCurrentUser from "@/hooks/useCurrentUser";
 import useFavorites from "@/hooks/useFavorites";
 import useInfoModalCustom from "@/hooks/useInfoModalCustom";
 import useMovieList from "@/hooks/useMovieList";
-import { NextPageContext } from "next";
+import { Metadata, NextPageContext } from "next";
 import { getSession, signOut } from "next-auth/react";
+import Head from "next/head";
 export async function getServerSideProps(context: NextPageContext) {
   const session = await getSession(context);
   if (!session)
@@ -26,8 +27,16 @@ export default function Home() {
   const { data: movies = [] } = useMovieList();
   const { data: favorites = [] } = useFavorites();
   const { isOpen, closeModal } = useInfoModalCustom();
+
   return (
     <>
+      <Head>
+        <title>Netflix Clone</title>
+        <meta
+          name="description"
+          content="A Netflix Clone project, using Next.js, React.js, MongoDB, TypeScript, and Prisma ORM, providing a Netflix-like experience."
+        />
+      </Head>
       <InfoModal visible={isOpen} onClose={closeModal} />
       <Navbar />
       <Billboard />
