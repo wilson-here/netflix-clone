@@ -11,7 +11,7 @@ interface MovieCardProps {
 
 const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
   const router = useRouter();
-  const { openModal } = useInfoModalCustom();
+  const { openModal, closeModal } = useInfoModalCustom();
   return (
     <div className="group bg-zinc-900 col-span relative aspect-video">
       <img
@@ -39,6 +39,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
             <div
               onClick={() => {
                 router.push(`/watch/${data?.id}`);
+                closeModal();
               }}
               className="cursor-pointer w-6 h-6 lg:w-8 lg:h-8 bg-white rounded-full flex items-center justify-center transition hover:bg-neutral-300"
             >
@@ -55,6 +56,9 @@ const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
               />
             </div>
           </div>
+          <p className="text-white text-sm lg:text-xl font-semibold mt-2 lg:mt-4">
+            {data?.title}
+          </p>
           <p className="text-green-400 text-xs lg:text-base font-semibold mt-2 lg:mt-4">
             New <span className="text-white">2023</span>
           </p>

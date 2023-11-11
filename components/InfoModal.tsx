@@ -56,7 +56,7 @@ const InfoModal: React.FC<InfoModalProps> = ({ visible, onClose }) => {
               <AiOutlineClose className="text-white " size={20} />
             </div>
             <div className="absolute inset-4 lg:inset-6 flex flex-col justify-between">
-              <p className="text-white text-2xl lg:text-3xl font-bold">
+              <p className="text-white text-lg lg:text-3xl font-bold w-[85%]">
                 {data?.title}
               </p>
               <div className="flex flex-row gap-4 items-center">

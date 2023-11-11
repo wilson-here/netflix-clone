@@ -19,18 +19,18 @@ const Watch = () => {
     <div className="h-screen w-screen bg-black">
       <nav
         ref={navRef}
-        className="fixed w-full p-4 z-10 flex flex-row items-center gap-4 lg:gap-8 bg-black bg-opacity-70 hover:opacity-100 transition duration-500"
+        className="fixed w-full p-4 z-10 flex flex-row items-center gap-4 lg:gap-8 bg-black bg-opacity-70 hover:opacity-100 transition duration-1000"
       >
-        <div className="cursor-pointer hover:bg-neutral-300/50 rounded-full p-2 transition duration-300">
-          <AiOutlineArrowLeft
-            onClick={() => {
-              router.push("/");
-            }}
-            className="text-white text-xl lg:text-4xl"
-          />
+        <div
+          onClick={() => {
+            router.push("/");
+          }}
+          className="cursor-pointer hover:bg-neutral-300/50 rounded-full p-2 transition duration-300"
+        >
+          <AiOutlineArrowLeft className="text-white text-xl lg:text-4xl" />
         </div>
 
-        <p className="text-white text-1xl md:text-3xl font-bold ">
+        <p className="text-white text-xl md:text-2xl font-bold ">
           <span className="font-light mr-2">Watching:</span>
           {data?.title}
         </p>
