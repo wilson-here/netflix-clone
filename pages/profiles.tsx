@@ -28,7 +28,7 @@ const Profiles = () => {
         <h1 className="text-3xl lg:text-5xl text-white text-center">
           Who is watching?
         </h1>
-        <div className="flex items-center justify-center gap-8 mt-5 lg:mt-10">
+        <div className="flex items-center justify-center gap-8 mt-10 lg:mt-20">
           <div
             onClick={() => {
               router.push("/");
