@@ -36,6 +36,7 @@ export default function Home() {
           name="description"
           content="A Netflix Clone project, using Next.js, React.js, MongoDB, TypeScript, and Prisma ORM, providing a Netflix-like experience."
         />
+        <link rel="icon" href="/favicon.png" type="image/x-icon"></link>
       </Head>
       <InfoModal visible={isOpen} onClose={closeModal} />
       <Navbar />

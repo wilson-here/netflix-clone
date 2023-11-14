@@ -20,6 +20,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
         }}
         src={data?.thumbnailUrl}
         alt="Thumbnail"
+        loading="lazy"
         className="cursor-pointer object-cover transition duration shadow-xl rounded-t-md group-hover:opacity-90 md:group-hover:opacity-0 delay-300 w-full h-full"
       />
       <div className="opacity-0 absolute top-0 transition duration-200 z-10 invisible md:visible delay-300 w-full scale-0 md:group-hover:scale-110 md:group-hover:-translate-y-[10%]  md:group-hover:opacity-100">
@@ -29,6 +30,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
           }}
           src={data?.thumbnailUrl}
           alt="Thumbnail"
+          loading="lazy"
           className="  cursor-pointer object-cover transition duration shadow-xl rounded-t-md w-full aspect-video"
         />
 
