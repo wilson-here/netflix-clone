@@ -31,10 +31,10 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Netflix Clone</title>
+        <title>Netflix (clone)</title>
         <meta
           name="description"
-          content="A Netflix Clone project, using Next.js, React.js, MongoDB, TypeScript, and Prisma ORM, providing a Netflix-like experience."
+          content="Leveraging React.js and Next.js, this project mirrors the iconic Netflix interface. Explore movies, enjoy seamless navigation, and experience a dynamic streaming environment."
         />
         <link rel="icon" href="/favicon.png" type="image/x-icon"></link>
       </Head>
