@@ -16,7 +16,7 @@ const PlayButton: React.FC<PlayButtonProps> = ({ movieId }) => {
         router.push(`/watch/${movieId}`);
         closeModal();
       }}
-      className="bg-white rounded-md py-1 px-2 w-auto text-xs lg:text-lg font-semibold flex flex-row items-center hover:bg-neutral-300 transition"
+      className="bg-white rounded-md py-1 pl-2 pr-3 w-auto text-xs lg:text-lg font-semibold flex flex-row items-center hover:bg-neutral-300 transition"
     >
       <BsFillPlayFill size={25} />
       Play
